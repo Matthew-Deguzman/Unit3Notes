@@ -3,55 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title>Avatar Chooser</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        .content{
+            width: 700px;
+        }
+        img{
+            width: 225px;
+            height: 225px;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
     <div class="content">
+        <img>
         <div class="row">
-            <button id="1">1</button>
-            <button id="2">2</button>
-            <button id="3">3</button>
-            <button id="4">4</button>
-            <button id="5">5</button>
-            <button id="6">6</button>
+            <h3>Avatar</h3>
+            <button id="1">Dog</button>
+            <button id="2">Cat</button>
+            <button id="3">Mouse</button>
+            <button id="4">Hamster</button>
+            <button id="5">Bird</button>
+            <button id="6">Fish</button>
+
         </div>
-        <button id="clear">CLEAR</button>
     </div>
 </div>
 <script>
-    const content = document.querySelector('.content');
+    const img = document.querySelector('img');
     const one = document.getElementById('1');
     const two = document.getElementById('2');
     const three = document.getElementById('3');
     const four = document.getElementById('4');
     const five = document.getElementById('5');
     const six = document.getElementById('6');
-    const clearButton = document.getElementById('clear');
+
 
     one.addEventListener('click', function(e){
-
+        img.src = "https://cdn.britannica.com/16/234216-050-C66F8665/beagle-hound-dog.jpg";
     });
-
     two.addEventListener('click', function(e){
-
+        img.src = "https://bestfriends.org/sites/default/files/styles/hero_mobile/public/hero-dash/Asana3808_Dashboard_Standard.jpg?h=ebad9ecf&itok=cWevo33k";
     });
-
     three.addEventListener('click', function(e){
-
+        img.src = "https://www.planetnatural.com/wp-content/uploads/2012/12/house-mouse.jpg";
     });
-
     four.addEventListener('click', function(e){
-
+        img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/PhodopusSungorus_1.jpg/640px-PhodopusSungorus_1.jpg";
     });
-
     five.addEventListener('click', function(e){
-
+        img.src = "https://www.birds.cornell.edu/home/wp-content/uploads/2023/09/334289821-Baltimore_Oriole-Matthew_Plante.jpg";
+    });
+    six.addEventListener('click', function(e) {
+        img.src = "https://b1157417.smushcdn.com/1157417/wp-content/uploads/fish-discus-swimming-825x550.jpg?lossy=1&strip=1&webp=0";
     });
 
-    six.addEventListener('click', function(e){
-
-    });
 </script>
 </body>
 </html>
