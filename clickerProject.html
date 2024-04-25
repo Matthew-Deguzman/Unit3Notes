@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minecraft Clicker</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        img{
+            width:400px;
+            height:400px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <div class="row">
+            <img src="https://media.forgecdn.net/avatars/290/291/637318237026561355.png">
+            <button id="button">Mine</button>
+        </div>
+        <div class="row">
+            <h2>Score:</h2>
+        </div>
+        <div class="row">
+            <div>
+                <button id="double">2x Multiplier: Points 150 </button>
+            </div>
+            <div>
+                <button id="triple">3x Multiplier: Points 300</button>
+            </div>
+            <div>
+                <button id="quad">4x Multiplier: Points 450</button>
+            </div>
+        </div>
+        <div class="row">
+            <button id="reset">Reset</button>
+        </div>
+    </div>
+</div>
+<script>
+    const img = document.querySelector('img');
+    const click = document.getElementById('1');
+    const score = document.querySelector('h2');
+    const button = document.getElementById('button');
+    const double = document.getElementById('double');
+    const triple = document.getElementById('triple');
+    const quad = document.getElementById('quad');
+    const reset = document.getElementById('reset');
+    const doubleCost = 150;
+    const tripleCost = 300;
+    const quadCost = 450;
+    let upgradeIncrement = 50;
+
+    let clickValue = 1;
+    let value = 0;
+    button.addEventListener('click', pressButton);
+    reset.addEventListener('click', function(e){
+        location.reload()
+    });
+    function pressButton() {
+        value+= clickValue;
+        score.textContent = `Score: ${value}`;
+        if (value >= upgradeIncrement*13) {
+            img.src = "https://i.redd.it/j7f5l6is6my41.png"
+            score.textContent= "You Win!";
+        }
+        else if (value >= upgradeIncrement*10) {
+            img.src = "https://d31sxl6qgne2yj.cloudfront.net/wordpress/wp-content/uploads/20190102094850/Minecraft-Emerald-Ore.jpg"
+        }
+        else if (value >= upgradeIncrement*8) {
+            img.src = "https://www.fractalcamo.com/uploads/5/9/0/2/5902948/s189772745713394276_p3855_i147_w750.jpeg"
+        }
+        else if (value >= upgradeIncrement*6) {
+            img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaCKo2zFGG-Irk9K5VbDFHwLPBPZRv1ie5RtlcezA1pq8i1pCF-Zx8-C5Q4J-eAJzc7l0&usqp=CAU"
+        }
+        else if (value >= upgradeIncrement*5) {
+            img.src = "https://www.fractalcamo.com/uploads/5/9/0/2/5902948/s189772745713394276_p3859_i149_w750.jpeg"
+        }
+        else if (value >= upgradeIncrement*4) {
+            img.src = "https://lh3.bunny.novaskin.me/qRqKhGmy5BlgaARSLitFX9PYYp62TireDf6-uDm_CnjZul0gmygHtud6L-Hh6Hu-fBBRP-ZImj7duVtgji6QZg=s250"
+        }
+        else if (value >= upgradeIncrement*3) {
+            img.src = "https://d31sxl6qgne2yj.cloudfront.net/wordpress/wp-content/uploads/20190102094848/Minecraft-Iron-Ore.jpg"
+        }
+        else if (value >= upgradeIncrement*2) {
+            img.src = "https://lh3.bunny.novaskin.me/8-YccDtonJTTEiXAQDuUdIxiZvueFTG2lMv5U3FBiHyyDPn6lsaihqBKwvKIaL0Q8A9wRwBLKGnZY-w-nLl44xUOaYKrK7lwAA=rw-h400"
+        }
+        else if (value >= upgradeIncrement) {
+            img.src = "https://www.fractalcamo.com/uploads/5/9/0/2/5902948/s189772745713394276_p3851_i145_w750.jpeg"
+        }
+    }
+    double.addEventListener('click', function(e){
+        if (value >= doubleCost) {
+            double.classList.add("hidden")
+            buy(doubleCost, 2)
+        }
+    });
+    triple.addEventListener('click', function(e){
+        if (value >= tripleCost) {
+            triple.classList.add("hidden")
+            buy(tripleCost, 3)
+        }
+    });
+    quad.addEventListener('click', function(e){
+        if (value >= quadCost) {
+            quad.classList.add("hidden")
+            buy(quadCost, 4)
+        }
+    });
+    function buy(price, multiplier){
+        value -= price;
+        clickValue = multiplier
+        score.textContent=`Score: ${value}`;
+    }
+</script>
+</body>
+</html>
