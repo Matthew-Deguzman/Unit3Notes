@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clicker Game</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="row">
+        <img src="https://media.forgecdn.net/avatars/290/291/637318237026561355.png">
+        <button id="mine">Mine</button>
+      </div>
+      <div class="row>">
+          <h2>Score:</h2>
+      </div>
+    </div>
+  </div>
+<script>
+    const mine = document.querySelector('[name="mine"]');
+    const score = document.querySelector('h2');
+
+    function pressButton() {
+        value += clickValue;
+        score.textContent = `Score: ${value}`;
+    }
+
+</script>
+</body>
+</html>
